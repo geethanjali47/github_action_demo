@@ -2,7 +2,9 @@ name: Python CI
 
 on:
   push:
+      branches: [main]
   pull_request:
+       branches: [main]
 
 jobs:
   test:
@@ -18,4 +20,4 @@ jobs:
           python-version: '3.12'
 
       - name: Run Python program
-        run: python hello.py
+        run: python -m unittest -v test_calculator.py
